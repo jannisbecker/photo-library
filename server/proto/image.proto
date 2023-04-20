@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/type/latlng.proto";
+
+message Image {
+    string id = 1;
+    string title = 2;
+    int32 width = 3;
+    int32 height = 4;
+    google.protobuf.Timestamp date_taken = 5;
+}
+
+message ImageExifData {}

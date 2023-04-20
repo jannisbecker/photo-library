@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "image.proto";
+
+message AlbumMetadata {
+    string id = 1;
+    string title = 2;
+    string subtitle = 3;
+    int32 photos_count = 4;
+    google.protobuf.Timestamp newest_photo_date = 5;
+    google.protobuf.Timestamp oldest_photo_date = 6;
+}
+
+message AlbumMetaRequest {
+    string id = 1;
+}
+
+message AlbumMetaResponse {
+    AlbumMetadata data = 1;
+}
+
+message AlbumImagesRequest {
+    string id = 1;
+}
+
+message AlbumImagesResponse {
+    repeated Image images = 1;
+}
